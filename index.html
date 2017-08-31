@@ -74,6 +74,15 @@ font-family: 'Philosopher', sans-serif;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {
+	
+  window.addEventListener('orientationchange', function () {
+    var originalBodyStyle = getComputedStyle(document.body).getPropertyValue('display');
+    document.body.style.display='none';
+    setTimeout(function () {
+      document.body.style.display = originalBodyStyle;
+    }, 50);
+  });	
+	
 $("g#so").css('display', 'none');
 var z = [];
 z[0] = [2,6];
